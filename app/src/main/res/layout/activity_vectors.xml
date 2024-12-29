@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Vectors">
+
+
+    <ScrollView
+        android:id="@+id/scroll_view_vector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1000dp">
+
+            <TextView
+                android:id="@+id/vector_sub_title_Define"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
+                android:text="Define Vectors\n\nEx : 2i+3j+5k\n\t\t\tType it like,\n\t\t\t 2 3 5"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,MissingConstraints" />
+
+            <EditText
+                android:id="@+id/txt_vector_values"
+                android:layout_width="299dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="5dp"
+                android:autofillHints=""
+                android:digits="0123456789-. "
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Write the vector without symbols"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_vector_save"
+                tools:ignore="HardcodedText,MissingConstraints" />
+
+            <EditText
+                android:id="@+id/txt_vector_name"
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="148dp"
+                android:ems="10"
+                android:hint="Vector name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toStartOf="@+id/btn_vector_save"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="Autofill,HardcodedText,MissingConstraints" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select the Vector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vector_sub_title_properties"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_vector_properties"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/vector_sub_title_properties"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Properties of Vectors"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_vector_values"
+                tools:ignore="HardcodedText,MissingConstraints" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_vector_props"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_back1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+                <TextView
+                    android:id="@+id/txt_vector_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img_vector_detail_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_vector_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/detail1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_vector_detail_btn"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/vector_sub_title_Calculations"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:text="Calculations"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                tools:ignore="HardcodedText,MissingConstraints" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/vector_operations"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="291dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="8dp"
+                android:hint="Select Operation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vector_sub_title_Calculations"
+                tools:ignore="HardcodedText,MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_operations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_vec_b"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="285dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:hint="Vector B"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_vec_a"
+                tools:ignore="HardcodedText,MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_vec_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_vec_c"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="288dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="12dp"
+                android:hint="Vector C"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_vec_b"
+                tools:ignore="HardcodedText,MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_vec_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_vector_answer"
+                android:layout_width="312dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="60dp"
+                android:hint="Answer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_vector_calculation"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_vec_a"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="283dp"
+                android:layout_height="68dp"
+                android:layout_marginTop="12dp"
+                android:hint="Vector A"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vector_operations"
+                tools:ignore="HardcodedText,MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_vec_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_vector_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_back1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_vector_name"
+                app:layout_constraintTop_toBottomOf="@+id/vector_sub_title_Define">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_back2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:layout_editor_absoluteX="10dp">
+
+                    <TextView
+                        android:id="@+id/txt_vector_save_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Save"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple_700"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_vector_save_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="DuplicateIds" />
+
+                    <ImageView
+                        android:id="@+id/img_vector_save_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:src="@drawable/save2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_vector_save_btn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="DuplicateIds" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/txt_scalar"
+                android:layout_width="98dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="20dp"
+                android:digits="0123456789.-"
+                android:ems="10"
+                android:hint="Scalar"
+                android:inputType="number"
+                app:layout_constraintEnd_toStartOf="@+id/btn_vector_calculation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_vec_c"
+                tools:ignore="Autofill,HardcodedText" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_vector_calculation"
+                android:layout_marginTop="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_back3_shadow"
+                app:layout_constraintVertical_bias="0.318"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_scalar"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_vec_c">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_back3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.092">
+
+                    <TextView
+                        android:id="@+id/txt_vector_cal_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Calculate"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_vector_cal_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_vector_cal_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/cal2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_vector_cal_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/vector_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:text="Vectors"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

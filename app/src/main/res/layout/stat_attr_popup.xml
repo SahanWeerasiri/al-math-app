@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="450dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/stat_popup_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:layout_gravity="end"
+        android:layout_marginRight="0dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#F44336"/>
+
+    <TextView
+        android:id="@+id/stat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Dark Message"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scroll_view_stat_popup"
+        android:layout_width="282dp"
+        android:layout_height="344dp"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="25dp"
+        android:layout_gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/stat_attributes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="Created By : Sahan Lahiru\nReleased on : 2023/01/31\n"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</LinearLayout>

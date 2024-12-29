@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Limits">
+
+    <EditText
+        android:id="@+id/txt_limit_function"
+        android:layout_width="277dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Type the function with x"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_limit_point"
+        android:layout_width="277dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:digits="0123456789.-"
+        android:ems="10"
+        android:hint="Type the limit point"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_limit_function" />
+
+    <TextView
+        android:id="@+id/txt_limit_answer"
+        android:layout_width="268dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
+        android:hint="Answer"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_limit" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/btn_back_4"
+        app:layout_constraintHorizontal_bias="0.5"
+
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_limit_point">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_back_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.077"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.092">
+
+            <TextView
+                android:id="@+id/txt_limit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Find Limit"
+                android:textAlignment="center"
+                android:textColor="@color/purple_700"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/img_limit_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_limit_btn"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="55dp"
+                android:src="@drawable/arrows"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_limit_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="300dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/vector_popup_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:layout_gravity="end"
+        android:layout_marginRight="0dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"/>
+
+    <TextView
+        android:id="@+id/vector_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Dark Message"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/vector"
+        android:layout_width="263dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/vector_mag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/vector_directions"
+        android:layout_width="290dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:text="Created By : Sahan Lahiru\nReleased on : 2023/01/31\n"
+        android:textColor="@color/white"
+        android:textSize="11dp"
+        android:textStyle="italic" />
+
+</LinearLayout>

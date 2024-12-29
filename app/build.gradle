@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+    id 'com.chaquo.python'
+}
+
+android {
+    namespace 'com.example.idealize'
+    //noinspection GradleCompatible
+    compileSdk 32
+    //noinspection GradleCompatible
+
+    defaultConfig {
+        applicationId 'com.al.math'
+        minSdk 22
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 33
+        //noinspection ExpiredTargetSdkVersion
+        versionCode 8
+        versionName "5.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        python {
+            version "3.8"
+            buildPython "C:\\Users\\SAHAN\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+
+            pyc {
+                src false
+            }
+        }
+
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+            }
+        }
+
+    }
+    buildFeatures{
+        viewBinding true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.androidplot:androidplot-core:1.5.10'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.google.android.gms:play-services-ads:21.5.0'
+}

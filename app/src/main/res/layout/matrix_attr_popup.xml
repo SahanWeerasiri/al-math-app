@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="450dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#636363">
+
+    <TextView
+        android:id="@+id/matrix_popup_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:layout_gravity="end"
+        android:layout_marginRight="0dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#F44336"/>
+
+    <TextView
+        android:id="@+id/matrix_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Dark Message"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/matrix"
+        android:layout_width="184dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/matrix_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/matrix_attributes"
+        android:layout_width="272dp"
+        android:layout_height="171dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:text="Created By : Sahan Lahiru\nReleased on : 2023/01/31\n"
+        android:textColor="@color/white"
+        android:textSize="11dp"
+        android:textStyle="italic" />
+
+</LinearLayout>

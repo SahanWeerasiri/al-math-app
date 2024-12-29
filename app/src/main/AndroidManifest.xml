@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/abacus"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/abacus"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Idealize"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1262150100678081~5620119659"/>
+
+
+
+        <activity
+            android:name=".Statictics"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Statictics" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Lines_Circles"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Lines_Circles" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Series"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Series" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SimultaneousEquations"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.SimultaneousEquations" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".General"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.General" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Derivative"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Derivative" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Vectors"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Vectors" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Graphs"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Graphs" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Limits"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Limits" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Matrix"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.Matrix" />
+
+                <category android:name="android.intent.category.DEFAULT." />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+    </application>
+
+</manifest>

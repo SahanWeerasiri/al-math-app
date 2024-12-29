@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lines_Circles">
+
+    <ScrollView
+        android:id="@+id/scroll_view_lines"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_lines_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2196F3"
+                android:text="Straight Lines"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="330dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="24dp"
+                android:text="Save Line\n\nTypes\n1)2 points -> x1,y1(space)x2,y2\n2)point and gradient -> x,y(space)m\n3)gradient and y intercept -> m(space)c\n4)line(ax+by+c=0) -> a(space)b(space)c"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_lines_name" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_line_save_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/txt_line_identity"
+                android:layout_width="282dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="Type name"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+
+            <EditText
+                android:id="@+id/txt_line_values"
+                android:layout_width="282dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:digits="0123456789 ,.-"
+                android:ems="10"
+                android:hint="Type values using correct syntax"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_identity" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_line_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_back1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_values">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_back2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.092">
+
+                    <TextView
+                        android:id="@+id/txt_line_save_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Save"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple_700"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_line_save_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_line_save_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:src="@drawable/save2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_line_save_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="330dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="24dp"
+                android:text="Details"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_line_save" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_line_details"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_line_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_line_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_back1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_line_details">
+
+                <TextView
+                    android:id="@+id/txt_line_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img_line_detail_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_line_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/detail1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_line_detail_btn"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="330dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="24dp"
+                android:text="Calculations"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_line_details" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_line_cal_type"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Calculation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_line_cal_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_line_cal_line1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Line 1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_line_cal_type"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_line_cal_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_line_cal_line2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Line 2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_line_cal_line1"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_line_cal_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/txt_line_additional_points"
+                android:layout_width="282dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:digits="0123456789 ,.-"
+                android:ems="10"
+                android:hint="Type point(s) using correct syntax"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_line_cal_line2" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_line_cal"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_back3_shadow"
+                app:layout_constraintVertical_bias="0.318"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_additional_points" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_back3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.092">
+
+                    <TextView
+                        android:id="@+id/txt_line_cal_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Calculate"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_line_cal_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                         />
+
+                    <ImageView
+                        android:id="@+id/img_line_cal_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/cal2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_line_cal_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txt_line_cal_answer"
+                android:layout_width="274dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:text="Answer"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_line_cal" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="330dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Ratio (Additional)"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_cal_answer" />
+
+            <EditText
+                android:id="@+id/txt_line_ratio_point1"
+                android:layout_width="86dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="14dp"
+                android:digits="0123456789,.-"
+                android:ems="10"
+                android:hint="Type point 1"
+                android:inputType="textPersonName"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_line_ratio_point2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <EditText
+                android:id="@+id/txt_line_ratio_point2"
+                android:layout_width="87dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="14dp"
+                android:digits="0123456789,.-"
+                android:ems="10"
+                android:hint="Type point 2"
+                android:inputType="textPersonName"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_line_ratio_point3"
+                app:layout_constraintStart_toEndOf="@+id/txt_line_ratio_point1"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <EditText
+                android:id="@+id/txt_line_ratio_point3"
+                android:layout_width="91dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="14dp"
+                android:digits="0123456789,.-"
+                android:ems="10"
+                android:hint="Type point 3"
+                android:inputType="textPersonName"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_line_ratio_point2"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <EditText
+                android:id="@+id/txt_line_ratio_m"
+                android:layout_width="91dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="Type m"
+                android:inputType="textPersonName"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_line_ratio_n"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_ratio_point1" />
+
+            <EditText
+                android:id="@+id/txt_line_ratio_n"
+                android:layout_width="91dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="Type n"
+                android:inputType="textPersonName"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_line_ratio_m"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_ratio_point3" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_line_ratio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_back_4"
+                app:layout_constraintHorizontal_bias="0.5"
+
+                app:layout_constraintVertical_bias="0.08"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_line_ratio_n" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_back_5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.092">
+
+                    <TextView
+                        android:id="@+id/txt_line_ratio_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Find"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple_700"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_line_ratio_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_line_ratio_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:src="@drawable/arrows"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_line_ratio_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txt_circles_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#2196F3"
+                android:text="Circles"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_line_ratio"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="330dp"
+                android:layout_height="158dp"
+                android:layout_marginTop="24dp"
+                android:text="Save Circle\n\nTypes\n1)center and radius -> x1,y1(space)r\n2)circle (x^2 + y^2 + 2gx + 2fy + c = 0) \n\t\t-> g(space)f(space)c\n3)Diameter Edge Points \n\t\t ->  x1,y1(space)x2,y2"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_circles_name" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_circle_save_type"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_circle_save_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/txt_circle_identity"
+                android:layout_width="282dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="Type name"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_circle_save_type" />
+
+
+            <EditText
+                android:id="@+id/txt_circle_values"
+                android:layout_width="282dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:digits="0123456789 ,.-"
+                android:ems="10"
+                android:hint="Type values using correct syntax"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_circle_identity" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_circle_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_back1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_circle_values">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_back2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.092">
+
+                    <TextView
+                        android:id="@+id/txt_circle_save_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Save Circle"
+                        android:textAlignment="center"
+                        android:textColor="@color/purple_700"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_circle_save_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="DuplicateIds" />
+
+                    <ImageView
+                        android:id="@+id/img_circle_save_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:src="@drawable/save2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_circle_save_btn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="DuplicateIds" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="330dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="24dp"
+                android:text="Details"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_circle_save" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_circle_details"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_circle_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_circle_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_back1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_circle_details">
+
+                <TextView
+                    android:id="@+id/txt_circle_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img_circle_detail_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
+
+                <ImageView
+                    android:id="@+id/img_circle_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/detail1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_circle_detail_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="330dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="24dp"
+                android:text="Calculations"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_circle_details" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_circle_cal_type"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Calculation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_circle_cal_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_circle_cal_circle1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Circle 1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_circle_cal_type"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_circle_cal_circle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_circle_cal_circle2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Circle 2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_circle_cal_circle1"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_circle_cal_circle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout_circle_cal_line"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="296dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="13dp"
+                android:hint="Select Line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_circle_cal_circle2"
+                tools:ignore="MissingConstraints,UnknownId">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text_circle_cal_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="415dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/txt_circle_additional_points"
+                android:layout_width="282dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="16dp"
+                android:digits="0123456789 ,.-"
+                android:ems="10"
+                android:hint="Type point(s) using correct syntax"
+                android:inputType="textPersonName"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout_circle_cal_line" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_circle_cal"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_back3_shadow"
+                app:layout_constraintVertical_bias="0.318"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_circle_additional_points" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_back3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.092">
+
+                    <TextView
+                        android:id="@+id/txt_circle_cal_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Calculate"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_circle_cal_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_circle_cal_btn"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/cal2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_circle_cal_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txt_circle_cal_answer"
+                android:layout_width="274dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="60dp"
+                android:text="Answer"
+                android:textSize="15dp"
+
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_circle_cal" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
